@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Crea una nueva receta
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated%}
+<h1>Crear nueva receta</h1>
+
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <!-- as_p significa como paragraph -->
+        {{ form.as_p}}
+        <button class="btn btn-secondary">Crear</button>
+
+    </form>
+</div>
+{% else %}
+    <h1>No está autorizado a editar post</h1>
+{% endif %}
+
+{% endblock %}

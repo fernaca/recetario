@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Borramos la receta{% endblock %}
+
+{% block content %}
+
+<h1>Borramos la receta</h1>
+<br><br>
+<h3>Borramos: {{post.title}}</h3>
+
+
+<div class="form-group">
+    <form method="POST">
+        {% csrf_token %}
+        <strong>Estas seguro?</strong><br><br>
+        <button class="btn btn-secondary">Borrar</button>
+
+    </form>
+</div>
+
+{% endblock %}
