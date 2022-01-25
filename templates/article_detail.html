@@ -14,7 +14,7 @@ Receta {{ post.title}}
 </small><br>
 <hr>
 <br>
-{{post.body}}
+{{post.body|safe}}
 
 <br><br>
 <a href="{% url 'home' %}" class="btn btn-secondary">Regresar</a>
